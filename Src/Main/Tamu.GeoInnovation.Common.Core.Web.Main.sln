@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tamu", "Tamu", "{5B1D21D3-D044-4FE6-B931-ECD274F4263A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeoInnovation", "GeoInnovation", "{BEC77F92-E25A-4795-875F-22D26F8A9D80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C303A8F9-75D4-4EE0-BF57-6FD1B443D942}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{61D0FDF9-2B9F-47DB-B94C-E3893A36226A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Core.Web", "Common.Core.Web.csproj", "{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Web.Processes", "..\..\..\Web.Processes\src\Main\Common.Web.Processes.csproj", "{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|.NET = Release|.NET
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Debug|.NET.ActiveCfg = Debug|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Debug|x86.ActiveCfg = Debug|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Debug|x86.Build.0 = Debug|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Release|.NET.ActiveCfg = Release|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Release|Mixed Platforms.Build.0 = Release|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Release|x86.ActiveCfg = Release|x86
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37}.Release|x86.Build.0 = Release|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Debug|.NET.ActiveCfg = Debug|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Debug|x86.ActiveCfg = Debug|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Debug|x86.Build.0 = Debug|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Release|.NET.ActiveCfg = Release|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Release|x86.ActiveCfg = Release|x86
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEC77F92-E25A-4795-875F-22D26F8A9D80} = {5B1D21D3-D044-4FE6-B931-ECD274F4263A}
+		{C303A8F9-75D4-4EE0-BF57-6FD1B443D942} = {BEC77F92-E25A-4795-875F-22D26F8A9D80}
+		{61D0FDF9-2B9F-47DB-B94C-E3893A36226A} = {C303A8F9-75D4-4EE0-BF57-6FD1B443D942}
+		{DEA75FBD-F1B4-4730-B10D-CBE20538DA37} = {61D0FDF9-2B9F-47DB-B94C-E3893A36226A}
+		{A5282B3B-EBB6-4E9B-84A4-3A619E2404AD} = {61D0FDF9-2B9F-47DB-B94C-E3893A36226A}
+	EndGlobalSection
+EndGlobal

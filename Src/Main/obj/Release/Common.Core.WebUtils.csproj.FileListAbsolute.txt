@@ -1,0 +1,3 @@
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Core.WebUtils\build\v1.1\bin\AnyCPU\release\USC.GISResearchLab.Common.Core.WebUtils.dll
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Core.WebUtils\src\obj\Release\USC.GISResearchLab.Common.Core.WebUtils.dll
+C:\Dev\VS2008DotNetDevelopment\USC\GISResearchLab\Common\Core.WebUtils\src\obj\Release\Common.Core.WebUtils.csprojResolveAssemblyReference.cache

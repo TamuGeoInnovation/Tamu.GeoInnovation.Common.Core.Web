@@ -1,0 +1,3 @@
+C:\DevSource\Tamu\GeoInnovation\Common.Core.Web\Src\Main\obj\Release\Tamu.GeoInnovation.Common.Core.Web.dll
+C:\DevSource\Tamu\GeoInnovation\Common.Core.Web\build\1.0.0\AnyCPU\release\Tamu.GeoInnovation.Common.Core.Web.dll
+C:\DevSource\Tamu\GeoInnovation\Common.Core.Web\Src\Main\obj\Release\Common.Core.Web.Dev.csprojResolveAssemblyReference.cache

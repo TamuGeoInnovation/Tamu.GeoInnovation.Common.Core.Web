@@ -97,14 +97,6 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tamu.GeoInnovation.Common.Core.Files">
-      <HintPath>..\..\..\..\..\..\..\..\DevBuild\Tamu\GeoInnovation\Common\Core\Files\build\1.0.0\release\Tamu.GeoInnovation.Common.Core.Files.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Tamu.GeoInnovation.Common.Core.Utils">
-      <HintPath>..\..\..\..\..\..\..\..\DevBuild\Tamu\GeoInnovation\Common\Core\Utils\build\1.0.0\release\Tamu.GeoInnovation.Common.Core.Utils.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agents\AddressParser\AddressParserUtils.cs" />
@@ -164,6 +156,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common.Core.Files\Src\Main\Common.Core.Files.Dev.csproj">
+      <Project>{0FF43F5C-9E8B-4010-A805-8C54EF43E511}</Project>
+      <Name>Common.Core.Files.Dev</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common.Core.Utils\Src\Main\Common.Core.Utils.Dev.csproj">
+      <Project>{0744A732-A7FE-4658-967D-C5A583EF08E4}</Project>
+      <Name>Common.Core.Utils.Dev</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!--  

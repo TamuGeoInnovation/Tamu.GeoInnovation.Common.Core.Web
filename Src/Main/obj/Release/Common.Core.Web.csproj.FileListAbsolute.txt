@@ -1,5 +1,0 @@
-C:\DevSource\Tamu\GeoInnovation\Common\Core\Web\Src\build\v1.1\bin\AnyCPU\release\Tamu.GeoInnovation.Common.Core.Web.dll
-C:\DevBuild\Tamu\GeoInnovation\Common\Core\Web\build\1.0.0\release\Tamu.GeoInnovation.Common.Core.Web.dll
-C:\DevSource\Tamu\GeoInnovation\Common\Core\Web\Src\Main\obj\Release\Common.Core.Web.csprojResolveAssemblyReference.cache
-C:\DevSource\Tamu\GeoInnovation\Common\Core\Web\Src\Main\obj\Release\Tamu.GeoInnovation.Common.Core.Web.dll
-C:\DevSource\Tamu\GeoInnovation\Common\Core\Web\build\1.0.0\AnyCPU\release\Tamu.GeoInnovation.Common.Core.Web.dll

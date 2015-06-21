@@ -1,2 +1,0 @@
-C:\DevBuild\Tamu\GeoInnovation\Common\Core\Web\build\1.0.0\release\Tamu.GeoInnovation.Common.Core.Web.dll
-C:\DevSource\Tamu\GeoInnovation\Common\Core\Web\Src\Main\obj\x86\Release\Tamu.GeoInnovation.Common.Core.Web.dll

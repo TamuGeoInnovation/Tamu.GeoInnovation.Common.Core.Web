@@ -97,6 +97,10 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ude, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\_RepoConfig\SolutionFiles\packages\UDE.CSharp.1.1.0\lib\Ude.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agents\AddressParser\AddressParserUtils.cs" />
@@ -153,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE.md" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LICENSE.txt" />

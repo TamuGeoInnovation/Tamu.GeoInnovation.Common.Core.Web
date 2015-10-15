@@ -19,17 +19,28 @@ namespace USC.GISResearchLab.Common.Core.JSON
 
         public static string CleanText(string s)
         {
+            return CleanText(s, true);
+        }
+
+        public static string CleanText(string s, bool shouldHtmlEncode)
+        {
             string ret = "";
             if (!String.IsNullOrEmpty(s))
             {
-                ret = HttpUtility.HtmlEncode(s)
-                    .Replace("\n", "\\n")
+                ret = s;
+
+                if (shouldHtmlEncode)
+                {
+                    ret = HttpUtility.HtmlEncode(s);
+                }
+
+                ret = ret.Replace("\n", "\\n")
                     .Replace("\r", "\\r")
                     .Replace("\b", "\\b")
                     .Replace("\f", "\\f")
                     .Replace("\t", "\\t")
-                    .Replace("\"", "\\\"")
                     .Replace("\\", "\\\\")
+                    .Replace("\"", "\\\"")
                     .Replace("/", "\\/");
             }
             return ret;

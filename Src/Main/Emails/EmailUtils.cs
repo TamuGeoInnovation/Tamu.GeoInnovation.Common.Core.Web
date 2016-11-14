@@ -405,6 +405,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
                             }
                         }
 
+                        smtp.Timeout = 10000;
                         smtp.Send(message);
                         ret = true;
                     }

@@ -329,7 +329,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
                             }
                         }
 
-                        message.Subject = subject;
+                        message.Subject = "NAACCR - " + subject;
                         message.From = new MailAddress(from);
 
                         if (!String.IsNullOrEmpty(replyTo))

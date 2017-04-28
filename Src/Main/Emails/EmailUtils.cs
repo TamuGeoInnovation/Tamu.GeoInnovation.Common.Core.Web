@@ -402,7 +402,8 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
                                     smtp.Port = 587;
                                 }
                                 else {
-                                    smtp.Port = 465;
+                                    //smtp.Port = 465;
+                                    smtp.Port = 587;
                                 }
                             }
                         }

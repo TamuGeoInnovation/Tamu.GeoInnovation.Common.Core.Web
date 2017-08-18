@@ -22,7 +22,8 @@ namespace USC.GISResearchLab.Core.WebServices.ResultCodes
         QuotaExceededAnonymous,
         QuotaExceededPaid,
         VersionInvalid,
-        VersionMissing
+        VersionMissing,
+        VersionOutdated
     };
 
 
@@ -84,9 +85,11 @@ namespace USC.GISResearchLab.Core.WebServices.ResultCodes
         // Versions errors
         public const int STATUS_CODE_FAILURE_VERSION_MISSING_VALUE = 480;
         public const int STATUS_CODE_FAILURE_VERSION_INVALID_VALUE = 481;
+        public const int STATUS_CODE_FAILURE_VERSION_OUTDATED_VALUE = 482;
 
         public const string STATUS_CODE_FAILURE_VERSION_MISSING_NAME = "Version Missing";
         public const string STATUS_CODE_FAILURE_VERSION_INVALID_NAME = "Version Invalid";
+        public const string STATUS_CODE_FAILURE_VERSION_OUTDATED_NAME = "Version Outdated";
 
 
         public static string GetStatusCodeName(QueryStatusCodes code)
@@ -147,6 +150,9 @@ namespace USC.GISResearchLab.Core.WebServices.ResultCodes
                     break;
                 case QueryStatusCodes.VersionMissing:
                     ret = STATUS_CODE_FAILURE_VERSION_MISSING_NAME;
+                    break;
+                case QueryStatusCodes.VersionOutdated:
+                    ret = STATUS_CODE_FAILURE_VERSION_OUTDATED_NAME;
                     break;
                 default:
                     throw new Exception("Unexpected QueryStatusCodes: " + code);
@@ -220,6 +226,10 @@ namespace USC.GISResearchLab.Core.WebServices.ResultCodes
             else if (String.Compare(statusName, STATUS_CODE_FAILURE_VERSION_MISSING_NAME, true) == 0)
             {
                 ret = QueryStatusCodes.VersionMissing;
+            }
+            else if (String.Compare(statusName, STATUS_CODE_FAILURE_VERSION_OUTDATED_NAME, true) == 0)
+            {
+                ret = QueryStatusCodes.VersionOutdated;
             }
             else if (String.Compare(statusName, STATUS_CODE_SUCCESS_NAME, true) == 0)
             {
@@ -295,6 +305,9 @@ namespace USC.GISResearchLab.Core.WebServices.ResultCodes
                 case QueryStatusCodes.VersionMissing:
                     ret = STATUS_CODE_FAILURE_VERSION_MISSING_VALUE;
                     break;
+                case QueryStatusCodes.VersionOutdated:
+                    ret = STATUS_CODE_FAILURE_VERSION_OUTDATED_VALUE;
+                    break;
                 default:
                     throw new Exception("Unexpected QueryStatusCodes: " + code);
             }
@@ -359,6 +372,9 @@ namespace USC.GISResearchLab.Core.WebServices.ResultCodes
                     break;
                 case STATUS_CODE_FAILURE_VERSION_MISSING_VALUE:
                     ret = QueryStatusCodes.VersionMissing;
+                    break;
+                case STATUS_CODE_FAILURE_VERSION_OUTDATED_VALUE:
+                    ret = QueryStatusCodes.VersionOutdated;
                     break;
                 default:
                     throw new Exception("Unexpected QueryStatusCodeValue: " + value);

@@ -17,6 +17,7 @@ namespace USC.GISResearchLab.Common.Core.Web.HttpModules
 
         private void Context_OnBeginRequest(object sender, EventArgs e)
         {
+            //PAYTON:PROFILER This is using an enormous amount of processing time 99%inclusive elapased time 22%exclusive
             // check Request 
 
             HttpContext context = HttpContext.Current;

@@ -16,7 +16,8 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
 
         public static bool SendMail(string mailServer, string from, string to, string subject, string body)
         {
-            return SendMail(mailServer, from, null, null, to, null, null, subject, body, false, 25, true);
+            //return SendMail(mailServer, from, null, null, to, null, null, subject, body, false, 587, true);
+            return SendMail(mailServer, from, null, null, to, null, null, subject, body, true, 25, true);
         }
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string subject, string body, int port)
@@ -26,7 +27,8 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string subject, string body)
         {
-            return SendMail(mailServer, from, username, password, to, null, null, subject, body, false, 25, true);
+            //return SendMail(mailServer, from, username, password, to, null, null, subject, body, false, 587, true);
+            return SendMail(mailServer, from, username, password, to, null, null, subject, body, true, 25, true);
         }
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string subject, string body, int port)
@@ -36,7 +38,9 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string subject, string body)
         {
-            return SendMail(mailServer, from, username, password, to, cc, null, subject, body, false, 25, true);
+            //return SendMail(mailServer, from, username, password, to, cc, null, subject, body, false, 587, true);
+            return SendMail(mailServer, from, username, password, to, cc, null, subject, body, true, 25, true);
+
         }
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string[] bcc, string subject, string body, int port)
@@ -46,12 +50,14 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string[] bcc, string subject, string body)
         {
-          return SendMail(mailServer, from, username, password, to, cc, bcc, subject, body, false, 25, true);
+            //return SendMail(mailServer, from, username, password, to, cc, bcc, subject, body, false, 587, true);
+            return SendMail(mailServer, from, username, password, to, cc, bcc, subject, body, true, 25, true);
         }
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string[] bcc, string replyTo, string subject, string body)
         {
-            return SendMail(mailServer, from, username, password, to, cc, bcc, replyTo, subject, body, false, 25, true);
+            //return SendMail(mailServer, from, username, password, to, cc, bcc, replyTo, subject, body, false, 587, true);
+            return SendMail(mailServer, from, username, password, to, cc, bcc, replyTo, subject, body, true, 25, true);
         }
 
 
@@ -379,7 +385,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
 
 
                         message.Body = body;
-                        SmtpClient smtp = new SmtpClient(mailServer, 25);
+                        SmtpClient smtp = new SmtpClient(mailServer, 587);
                         // smtp.Timeout = 5000;
 
                         if (username != null && password != null)
@@ -409,13 +415,14 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
                         }
                         else
                         {
+                            smtp.EnableSsl = true;
                             if (port > 0)
                             {
                                 smtp.Port = port;
                             }
                             else
                             {
-                                smtp.Port = 25;
+                                smtp.Port = 587;
                             }
                         }
 

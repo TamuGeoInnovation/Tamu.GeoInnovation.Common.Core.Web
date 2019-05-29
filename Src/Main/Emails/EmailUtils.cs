@@ -3,6 +3,8 @@ using System.Net;
 using System.Net.Mail;
 using System.IO;
 using System.Net.Mime;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace USC.GISResearchLab.Common.Utils.Web.Emails
 {
@@ -266,6 +268,11 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string[] bcc, string replyTo, string subject, string body, bool useSSL, int port, string[] fileAttachments, bool isHtml, bool shouldThrowExceptions)
         {
+            return SendMail(mailServer, from, username, password, null, to, cc, bcc, replyTo, subject, body, useSSL, port, fileAttachments, isHtml, shouldThrowExceptions);
+        }
+
+            public static bool SendMail(string mailServer, string from, string username, string password, string displayName, string to, string[] cc, string[] bcc, string replyTo, string subject, string body, bool useSSL, int port, string[] fileAttachments, bool isHtml, bool shouldThrowExceptions)
+        {
             bool ret = true;
 
             try
@@ -334,21 +341,31 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
                                 }
                             }
                         }
-                        if(to.Contains("23075"))
+
+                        // this is not the right place to do this..
+                        //if(to.Contains("23075"))
+                        //{
+                        //    message.Subject = "NAACCR - " + subject;
+                        //}
+                        //else
+                        //{
+                        //    message.Subject = "Geocoding - " + subject;
+                        //}
+
+                        message.Subject = subject;
+
+                        if (!String.IsNullOrEmpty(displayName))
                         {
-                            message.Subject = "NAACCR - " + subject;
+                            message.From = new MailAddress(from, displayName);
                         }
                         else
                         {
-                            message.Subject = "Geocoding - " + subject;
+                            message.From = new MailAddress(from);
                         }
-
-                        
-                        message.From = new MailAddress(from);
 
                         if (!String.IsNullOrEmpty(replyTo))
                         {
-                            message.ReplyTo = new MailAddress(replyTo);
+                            message.ReplyToList.Add(new MailAddress(replyTo));
                         }
 
 
@@ -403,14 +420,17 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
                             }
                             else
                             {
-                                if (to.Contains("bugs.zohoprojects.com"))
-                                {
-                                    smtp.Port = 587;
-                                }
-                                else {
-                                    //smtp.Port = 465;
-                                    smtp.Port = 587;
-                                }
+                                smtp.Port = 587;
+
+
+                                // this is not the right place to do this.
+                                //if (to.Contains("bugs.zohoprojects.com"))
+                                //{
+                                //    smtp.Port = 587;
+                                //}
+                                //else {
+                                //    smtp.Port = 587;
+                                //}
                             }
                         }
                         else
@@ -439,6 +459,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
             catch (Exception e)
             {
                 ret = false;
+                Serilog.Log.Error(new StackFrame().GetMethod().DeclaringType.Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
                 if (shouldThrowExceptions)
                 {
                     string message = "An error occured sending email: " + e.Message;

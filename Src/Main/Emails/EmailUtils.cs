@@ -459,7 +459,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
             catch (Exception e)
             {
                 ret = false;
-                Serilog.Log.Error(new StackFrame().GetMethod().DeclaringType.Name + " " + MethodBase.GetCurrentMethod().Name + " errored out");
+                Serilog.Log.Error(new StackFrame().GetMethod().DeclaringType.Name + " " + MethodBase.GetCurrentMethod().Name + " errored out: " + "\n\n===================\n\n" + e.Message + "\n\n===================\n\n" + e.StackTrace);
                 if (shouldThrowExceptions)
                 {
                     string message = "An error occured sending email: " + e.Message;

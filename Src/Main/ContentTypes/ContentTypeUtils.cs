@@ -177,7 +177,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.ContentTypes
                     break;
 
                 //Database files
-                case"MDB":
+                case "MDB":
                     ret = "application/vnd.ms-access";
                     break;
 

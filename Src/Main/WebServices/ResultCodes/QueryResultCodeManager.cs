@@ -25,7 +25,7 @@ namespace USC.GISResearchLab.Core.WebServices.ResultCodes
         VersionMissing,
         VersionOutdated
     };
-    
+
     public class QueryResultCodeManager
     {
 

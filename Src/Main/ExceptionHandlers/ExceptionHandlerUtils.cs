@@ -48,7 +48,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.ExceptionHandlers
             if (request != null)
             {
                 for (int i = 0; i < request.Params.Count; i++)
-                {   
+                {
                     requestParameters += "<br>     " + request.Params.Keys[i] + ": " + request[request.Params.Keys[i]];
                 }
 
@@ -97,7 +97,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.ExceptionHandlers
 
             if (traceSource != null)
             {
-                
+
                 traceSource.TraceEvent(TraceEventType.Error, 0, DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") + " - " + message);
             }
 

@@ -39,7 +39,7 @@ namespace USC.GISResearchLab.Common.Core.Web.Payments.CreditCards
 
             for (int i = digitsOnly.Length - 1; i >= 0; i--)
             {
-                string s = digitsOnly.Substring(i, 1); 
+                string s = digitsOnly.Substring(i, 1);
                 digit = Convert.ToInt32(s);
                 if (timesTwo)
                 {

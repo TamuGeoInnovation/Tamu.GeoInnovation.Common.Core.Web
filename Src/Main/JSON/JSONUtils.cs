@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Web;
-using System.Data;
 
 namespace USC.GISResearchLab.Common.Core.JSON
 {
@@ -42,6 +41,42 @@ namespace USC.GISResearchLab.Common.Core.JSON
                     .Replace("\\", "\\\\")
                     .Replace("\"", "\\\"")
                     .Replace("/", "\\/");
+            }
+            return ret;
+        }
+
+        public static string CleanText(string s, bool shouldHtmlEncode, bool shouldPreserveWhitespace)
+        {
+            string ret = "";
+            if (!String.IsNullOrEmpty(s))
+            {
+                ret = s;
+
+                if (shouldHtmlEncode)
+                {
+                    ret = HttpUtility.HtmlEncode(s);
+                }
+
+                // replace DB newlines \r\n with regular text newlines \n
+                //ret = ret.Replace(Environment.NewLine, "\n");
+
+
+                if (!shouldPreserveWhitespace)
+                {
+                    ret = ret.Replace("\n", "\\n")
+                        .Replace("\r", "\\r")
+                        .Replace("\b", "\\b")
+                        .Replace("\f", "\\f")
+                        .Replace("\t", "\\t");
+                }
+
+                ret = ret.Replace(Environment.NewLine, "\\n");
+
+                // escape quotes
+                ret = ret.Replace("\"", "\\\"");
+
+                // escape url forward slash
+                //ret = ret.Replace("/", "\\/");
             }
             return ret;
         }

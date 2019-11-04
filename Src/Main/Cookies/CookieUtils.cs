@@ -42,7 +42,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Cookies
 
         public static void SetCookie(Page page, string name, object value)
         {
-            SetCookie(page, name, Convert.ToString(value), Convert.ToDouble(120)); 
+            SetCookie(page, name, Convert.ToString(value), Convert.ToDouble(120));
         }
 
         public static void SetCookie(Page page, string name, string value)

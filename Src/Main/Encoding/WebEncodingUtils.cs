@@ -6,7 +6,7 @@ namespace USC.GISResearchLab.Common.Utils.Encoding
     public class WebEncodingUtils
     {
 
-        
+
 
         public static string URLEncode(string s)
         {

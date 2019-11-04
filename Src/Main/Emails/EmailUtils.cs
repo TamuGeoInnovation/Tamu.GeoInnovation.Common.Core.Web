@@ -1,9 +1,9 @@
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Net.Mail;
-using System.IO;
 using System.Net.Mime;
-using System.Diagnostics;
 using System.Reflection;
 
 namespace USC.GISResearchLab.Common.Utils.Web.Emails
@@ -263,7 +263,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string[] bcc, string replyTo, string subject, string body, bool useSSL, int port, string[] fileAttachments, bool shouldThrowExceptions)
         {
-            return SendMail( mailServer,  from,  username,  password,  to,  cc,  bcc,  replyTo,  subject,  body,  useSSL,  port,  fileAttachments,  false,  shouldThrowExceptions);
+            return SendMail(mailServer, from, username, password, to, cc, bcc, replyTo, subject, body, useSSL, port, fileAttachments, false, shouldThrowExceptions);
         }
 
         public static bool SendMail(string mailServer, string from, string username, string password, string to, string[] cc, string[] bcc, string replyTo, string subject, string body, bool useSSL, int port, string[] fileAttachments, bool isHtml, bool shouldThrowExceptions)
@@ -271,7 +271,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
             return SendMail(mailServer, from, username, password, null, to, cc, bcc, replyTo, subject, body, useSSL, port, fileAttachments, isHtml, shouldThrowExceptions);
         }
 
-            public static bool SendMail(string mailServer, string from, string username, string password, string displayName, string to, string[] cc, string[] bcc, string replyTo, string subject, string body, bool useSSL, int port, string[] fileAttachments, bool isHtml, bool shouldThrowExceptions)
+        public static bool SendMail(string mailServer, string from, string username, string password, string displayName, string to, string[] cc, string[] bcc, string replyTo, string subject, string body, bool useSSL, int port, string[] fileAttachments, bool isHtml, bool shouldThrowExceptions)
         {
             bool ret = true;
 
@@ -472,7 +472,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.Emails
             }
 
             return ret;
-        
+
         }
     }
 }

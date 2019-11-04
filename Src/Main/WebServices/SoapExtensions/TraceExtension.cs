@@ -3,8 +3,8 @@ using System.IO;
 using System.Web.Services.Protocols;
 
 // Define a SOAP Extension that traces the SOAP request and SOAP
-  // response for the Web service method the SOAP extension is
-  // applied to.
+// response for the Web service method the SOAP extension is
+// applied to.
 
 // from http://msdn2.microsoft.com/en-us/library/7w06t139(VS.80).aspx
 
@@ -113,5 +113,5 @@ namespace USC.GISResearchLab.Common.Core.WebServices.SoapExtensions
             writer.WriteLine(reader.ReadToEnd());
             writer.Flush();
         }
-    }   
+    }
 }

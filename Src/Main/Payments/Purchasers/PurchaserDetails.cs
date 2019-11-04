@@ -60,7 +60,7 @@
         {
             MiddleName = "";
             Salutation = "";
-            Email  = "";
+            Email = "";
             FirstName = "";
             LastName = "";
             Phone = "";

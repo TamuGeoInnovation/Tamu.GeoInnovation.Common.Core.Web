@@ -8,46 +8,47 @@ using USC.GISResearchLab.Common.Utils.Strings;
 
 namespace USC.GISResearchLab.Common.Utils.Agents
 {
-	/// <summary>
-	/// Summary description for AgentUtils.
-	/// </summary>
-	public class AgentUtils
-	{
+    /// <summary>
+    /// Summary description for AgentUtils.
+    /// </summary>
+    public class AgentUtils
+    {
         public static string AGENT_URL_FILE_PATH = "C:\\Inetpub\\wwwroot\\Geocoder\\AGENT_URL.txt";
 
-		public AgentUtils()
-		{
-		}
+        public AgentUtils()
+        {
+        }
 
-		public static string buildAgentQueryString(string planPath, string parameters){
-			return buildAgentQueryString(null, planPath, parameters);
-		}
+        public static string buildAgentQueryString(string planPath, string parameters)
+        {
+            return buildAgentQueryString(null, planPath, parameters);
+        }
 
-		public static string buildAgentQueryString(string agentServerUrl, string planPath, string parameters)
-		{
-			string ret = "";
+        public static string buildAgentQueryString(string agentServerUrl, string planPath, string parameters)
+        {
+            string ret = "";
 
-			if (StringUtils.IsEmpty(agentServerUrl))
-			{
-				agentServerUrl = getAgentServerUrl();
-			}
+            if (StringUtils.IsEmpty(agentServerUrl))
+            {
+                agentServerUrl = getAgentServerUrl();
+            }
 
-			ret += agentServerUrl;
-			ret += planPath;
-			ret+= parameters;
+            ret += agentServerUrl;
+            ret += planPath;
+            ret += parameters;
 
-			return ret;
-		}
+            return ret;
+        }
 
-		public static XPathDocument query(string planPath, string parameters)
-		{
-			string url = getAgentServerUrl() + planPath + parameters;
-			return query(url);
-		}
+        public static XPathDocument query(string planPath, string parameters)
+        {
+            string url = getAgentServerUrl() + planPath + parameters;
+            return query(url);
+        }
 
-		public static XPathDocument query(string url)
-		{
-			XPathDocument xpathDocument = null;
+        public static XPathDocument query(string url)
+        {
+            XPathDocument xpathDocument = null;
 
             try
             {
@@ -70,15 +71,15 @@ namespace USC.GISResearchLab.Common.Utils.Agents
                 throw new AssessorException("An error occured querying LA Assessor Site - Check that the agent is running: " + e.Message + " : - URL:" + url);
             }
 
-			return xpathDocument;
-		}
+            return xpathDocument;
+        }
 
-		public static string getAgentServerUrl()
-		{
-			string ret = "";
-			ret = FileUtils.AsString(AGENT_URL_FILE_PATH);
-			return ret;
-		}
+        public static string getAgentServerUrl()
+        {
+            string ret = "";
+            ret = FileUtils.AsString(AGENT_URL_FILE_PATH);
+            return ret;
+        }
 
-	}
+    }
 }

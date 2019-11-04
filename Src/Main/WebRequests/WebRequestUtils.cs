@@ -339,7 +339,7 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.WebRequests
                 // For production we should use the X509Certificate class to create a certification object from a certification file.
 
                 ServicePointManager.ServerCertificateValidationCallback =
-                    delegate(object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
+                    delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) { return true; };
             }
 
             using (Stream writeStream = request.GetRequestStream())

@@ -97,10 +97,10 @@
 
         public CreditCardDetails()
         {
-            CardNumber  = "";
-            CardType  = "";
-            CardVerificationCode  = "";
-            NameOnCard  = "";
+            CardNumber = "";
+            CardType = "";
+            CardVerificationCode = "";
+            NameOnCard = "";
             StreetAddress = "";
             StreetAddress2 = "";
             City = "";

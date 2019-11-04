@@ -36,7 +36,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.UIs
 
         public static TableRow BuildTableRow(string cssClass, string text)
         {
-            return BuildTableRow(cssClass, new string[] {text});
+            return BuildTableRow(cssClass, new string[] { text });
         }
 
         public static TableRow BuildTableRow(string cssClass, string[] values)
@@ -123,7 +123,7 @@ namespace USC.GISResearchLab.Common.Utils.Web.UIs
         public static TableCell BuildButtonTableCell(string cssClass, string text, CommandEventHandler commandEventHandler, string args)
         {
             TableCell ret = BuildTableCell("");
-            ret.Controls.Add(BuildButton(cssClass , text, commandEventHandler, args));
+            ret.Controls.Add(BuildButton(cssClass, text, commandEventHandler, args));
             return ret;
         }
 

@@ -1,7 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Web;
-using System.Collections.Generic;
 
 namespace USC.GISResearchLab.Common.Utils.Web.URLs
 {

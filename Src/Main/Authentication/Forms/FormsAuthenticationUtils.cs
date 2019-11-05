@@ -44,6 +44,11 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
 
         public static void SetAuthenticated(HttpRequest Request, HttpResponse Response, int userId, string userName, string roles)
         {
+            SetAuthenticated(Request, Response, userId, userName, null, roles);
+        }
+
+            public static void SetAuthenticated(HttpRequest Request, HttpResponse Response, int userId, string userName, string userGuid, string roles)
+        {
             try
             {
 
@@ -61,6 +66,11 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                 CookieUtils.SetCookie(Request, Response, FormsAuthentication.FormsCookieName, encryptedTicket);
                 CookieUtils.SetCookie(Request, Response, "UserId", Convert.ToString(userId));
                 CookieUtils.SetCookie(Request, Response, "HasRegistered", Convert.ToString(true), 525600);
+
+                if (!String.IsNullOrEmpty(userGuid))
+                {
+                    CookieUtils.SetCookie(Request, Response, "UserGuid", Convert.ToString(userGuid));
+                }
             }
             catch (Exception e)
             {

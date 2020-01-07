@@ -16,9 +16,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.WebRequests
         public static string SendPostRequest(string url, string contentType, NameValueCollection queryString, CookieContainer cookies)
         {
 
-            string postdata = "?";
+            string postdata = "";
             if (queryString != null)
             {
+                postdata += "?";
                 foreach (string key in queryString.Keys)
                 {
                     postdata += key + "=" + queryString.Get(key) + "&";

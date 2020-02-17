@@ -17,38 +17,40 @@ namespace USC.GISResearchLab.Common.Core.Web.HttpModules
 
         private void Context_OnBeginRequest(object sender, EventArgs e)
         {
-            //PAYTON:PROFILER This is using an enormous amount of processing time 99%inclusive elapased time 22%exclusive
-            // check Request 
+            // dan - 2020-02-19 - Not sure why this is here, remove. It is stripping query string from rest-style folder endpoints
 
-            HttpContext context = HttpContext.Current;
-            HttpRequest request = context.Request;
-            string file = request.FilePath;
+            ////PAYTON:PROFILER This is using an enormous amount of processing time 99%inclusive elapased time 22%exclusive
+            //// check Request 
 
-            if (!PathUtils.ContainsInvalidFileNameChars(file))
-            {
+            //HttpContext context = HttpContext.Current;
+            //HttpRequest request = context.Request;
+            //string file = request.FilePath;
 
-                string ext = Path.GetExtension(file);
-                if (string.IsNullOrEmpty(ext) && !file.EndsWith("/"))
-                {
-                    string q = request.QueryString.ToString();
-                    string path = request.FilePath + "/" + (string.IsNullOrEmpty(q) ? "" : q);
+            //if (!PathUtils.ContainsInvalidFileNameChars(file))
+            //{
 
-                    if (path.EndsWith("/"))
-                    {
-                        path += "Default.aspx";
-                    }
+            //    string ext = Path.GetExtension(file);
+            //    if (string.IsNullOrEmpty(ext) && !file.EndsWith("/"))
+            //    {
+            //        string q = request.QueryString.ToString();
+            //        string path = request.FilePath + "/" + (string.IsNullOrEmpty(q) ? "" : q);
 
-                    context.Response.Redirect(path);
-                }
-                else
-                {
-                    if (file.EndsWith("/"))
-                    {
-                        string path = request.FilePath + "Default.aspx";
-                        context.Response.Redirect(path);
-                    }
-                }
-            }
+            //        if (path.EndsWith("/"))
+            //        {
+            //            path += "Default.aspx";
+            //        }
+
+            //        context.Response.Redirect(path);
+            //    }
+            //    else
+            //    {
+            //        if (file.EndsWith("/"))
+            //        {
+            //            string path = request.FilePath + "Default.aspx";
+            //            context.Response.Redirect(path);
+            //        }
+            //    }
+            //}
 
         }
 

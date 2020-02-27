@@ -140,6 +140,7 @@
     <Compile Include="UIs\WebControlUtils.cs" />
     <Compile Include="URLs\URLUtils.cs" />
     <Compile Include="WebControls\TableRowArrayUtils.cs" />
+    <Compile Include="WebControls\Views\ViewUtils.cs" />
     <Compile Include="WebRequests\WebRequestUtils.cs" />
     <Compile Include="WebServices\ResultCodes\QueryResultCodeManager.cs" />
     <Compile Include="WebServices\SoapExtensions\TraceExtension.cs" />

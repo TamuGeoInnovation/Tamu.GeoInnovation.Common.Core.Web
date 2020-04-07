@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
@@ -34,9 +35,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                     ret = new GenericPrincipal(id, roles);
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred Authenticating: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
 
             return ret;
@@ -47,7 +49,7 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
             SetAuthenticated(Request, Response, userId, userName, null, roles);
         }
 
-            public static void SetAuthenticated(HttpRequest Request, HttpResponse Response, int userId, string userName, string userGuid, string roles)
+        public static void SetAuthenticated(HttpRequest Request, HttpResponse Response, int userId, string userName, string userGuid, string roles)
         {
             try
             {
@@ -72,9 +74,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                     CookieUtils.SetCookie(Request, Response, "UserGuid", Convert.ToString(userGuid));
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred setting authenticated: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
         }
 
@@ -98,9 +101,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                 CookieUtils.SetCookie(Request, Response, "UserGuid", userGuid);
                 CookieUtils.SetCookie(Request, Response, "HasRegistered", Convert.ToString(true), 525600);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred setting authenticated: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
         }
 
@@ -135,9 +139,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred renewing authentication: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
 
             return ret;
@@ -186,9 +191,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred renewing authentication: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
 
             return ret;
@@ -213,9 +219,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                 CookieUtils.SetCookie(Request, Response, FormsAuthentication.FormsCookieName, encryptedTicket);
                 CookieUtils.SetCookie(Request, Response, "UserGuid", userGuid);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred SetAuthenticatedGuid: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
         }
 
@@ -250,9 +257,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred RenewAuthenticatedGuid: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
 
             return ret;
@@ -270,9 +278,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                     ret = FormsAuthentication.Decrypt(authCookie.Value);
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred getting authentication ticket: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
 
             return ret;
@@ -299,9 +308,10 @@ namespace USC.GISResearchLab.Common.Core.Utils.Web.Authentication.Forms
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception("An error occurred getting authentication roles: " + e.Message, e);
+                Serilog.Log.Error(ex, MethodBase.GetCurrentMethod().GetType().Name + " - " + MethodBase.GetCurrentMethod().Name + ": " + ex.Message);
+                FormsAuthentication.SignOut();
             }
 
             return ret;

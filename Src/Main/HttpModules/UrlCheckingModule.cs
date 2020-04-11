@@ -2,9 +2,7 @@
 
 
 using System;
-using System.IO;
 using System.Web;
-using USC.GISResearchLab.Common.Core.IOs.Paths;
 
 namespace USC.GISResearchLab.Common.Core.Web.HttpModules
 {
